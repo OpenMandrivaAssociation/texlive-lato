@@ -1,3 +1,9 @@
+# revision 23705
+# category Package
+# catalog-ctan /fonts/lato
+# catalog-date 2011-08-23 14:32:14 +0200
+# catalog-license lppl1.3
+# catalog-version 2.0
 Name:		texlive-lato
 Version:	2.0
 Release:	1
@@ -249,6 +255,7 @@ support with Dvips.
 %doc %{_texmfdistdir}/source/fonts/lato/lato-fixtextcomp.mtx
 %doc %{_texmfdistdir}/source/fonts/lato/lato-map.tex
 %doc %{_texmfdistdir}/source/fonts/lato/ttf2type1.pe
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -259,3 +266,5 @@ support with Dvips.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
