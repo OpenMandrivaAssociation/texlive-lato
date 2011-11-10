@@ -1,11 +1,11 @@
-# revision 23705
+# revision 24489
 # category Package
 # catalog-ctan /fonts/lato
-# catalog-date 2011-08-23 14:32:14 +0200
+# catalog-date 2011-11-03 09:19:42 +0100
 # catalog-license lppl1.3
-# catalog-version 2.0
+# catalog-version 2.1
 Name:		texlive-lato
-Version:	2.0
+Version:	2.1
 Release:	1
 Summary:	Lato font fanily and LaTeX support
 Group:		Publishing
