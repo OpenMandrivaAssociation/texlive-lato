@@ -6,7 +6,7 @@
 # catalog-version 2.2
 Name:		texlive-lato
 Version:	2.2
-Release:	4
+Release:	5
 Summary:	Lato font fanily and LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/lato
