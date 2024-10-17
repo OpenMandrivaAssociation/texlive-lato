@@ -3,7 +3,7 @@ Version:	54512
 Release:	2
 Summary:	Lato font fanily and LaTeX support
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/lato
+URL:		https://www.ctan.org/tex-archive/fonts/lato
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.doc.r%{version}.tar.xz
