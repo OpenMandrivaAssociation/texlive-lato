@@ -1,53 +1,27 @@
-Name:		texlive-lato
-Version:	54512
-Release:	2
-Summary:	Lato font fanily and LaTeX support
+%global tl_name lato
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	3.3
+Release:	%{tl_revision}.1
+Summary:	Lato font family and LaTeX support
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/lato
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.doc.r%{version}.tar.xz
+License:	ofl lppl1.3c
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/lato.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Lato is a sanserif typeface family designed in the Summer 2010
-by Warsaw-based designer Lukasz Dziedzic for the tyPoland
-foundry. This font, which includes five weights (hairline,
-light, regular, bold and black), is available from the Google
-Font Directory as TrueType files under the Open Font License
-version 1.1. The package provides support for this font in
-LaTeX. It includes the original TrueType fonts, as well as Type
-1 versions, converted for this package using FontForge for full
+Lato is a sanserif typeface family designed in the Summer 2010 by
+Warsaw-based designer Lukasz Dziedzic for the tyPoland foundry. This
+font, which includes five weights (hairline, light, regular, bold and
+black), is available from the Google Font Directory as TrueType files
+under the Open Font License version 1.1. The package provides support
+for this font in LaTeX. It includes the original TrueType fonts, as well
+as Type 1 versions, converted for this package using FontForge for full
 support with Dvips.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/enc/dvips/lato
-%{_texmfdistdir}/fonts/map/dvips/lato
-%{_texmfdistdir}/fonts/tfm/typoland/lato
-%{_texmfdistdir}/fonts/truetype/typoland/lato
-%{_texmfdistdir}/fonts/type1/typoland/lato
-%{_texmfdistdir}/fonts/vf/typoland/lato
-%{_texmfdistdir}/tex/latex/lato
-%doc %{_texmfdistdir}/doc/fonts/lato
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
